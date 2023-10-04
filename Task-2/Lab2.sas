@@ -1,12 +1,12 @@
 libname data '/home/u63603566/Lab-2';
 
-/* Step 1: Import the emplist data from a .dat file */
+/* Step 1: Import the emplist data */
 data data.emplist;
   infile '/home/u63603566/Lab-2/emplist.dat' delimiter=',';
   input EmployeeID EmployeeName $ Salary Department $;
 run;
 
-/* Step 2: Import the airport data from a .dat file */
+/* Step 2: Import the airport data */
 data data.airport;
   infile '/home/u63603566/Lab-2/airports.dat' delimiter=',';
   input AirportCode $ AirportName $ City $ Country $;
