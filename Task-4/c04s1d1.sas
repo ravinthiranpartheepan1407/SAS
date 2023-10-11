@@ -1,0 +1,24 @@
+libname ia '/home/u59395988/prog1'; *PC;
+*libname ia '.'; *Unix;
+*libname ia '/home/u59395988/Class03/'; *TSO;
+
+proc print data=ia.empdata;
+where LastName ? 'LAM';
+run;
+proc sort data=ia.empdata;
+   by Salary;
+run;
+proc print data=ia.empdata;
+   var JobCode EmpID Salary;
+run;
+proc print data=ia.empdata noobs;
+   var JobCode EmpID Salary;
+   where JobCode='PILOT';
+    sum Salary;
+run;
+proc print data=ia.empdata noobs;
+   var JobCode EmpID Salary;
+   where JobCode='PILOT' and Salary>50000;
+   where Salary between 50000 and 70000;
+   sum Salary; 
+run;
